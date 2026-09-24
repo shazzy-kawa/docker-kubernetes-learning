@@ -1,0 +1,13 @@
+name: Build Docker project
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Python web app image
+        run: docker build -t python-web-app ./projects/01-python-web-app
